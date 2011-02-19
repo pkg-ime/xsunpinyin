@@ -1,0 +1,23 @@
+When LDFLAGS, CXXFLAGS and others is defined in system environment, the value defined
+in system environment should be appended to env, rather than replace.
+
+--- a/SConstruct
++++ b/SConstruct
+@@ -32,7 +32,7 @@
+                   'IMdkit/IMValues.c']
+ 
+ 
+-cflags='-O2 -g -pipe'
++cflags='-O2 -g -pipe '
+ 
+ # options
+ AddOption('--prefix', dest='prefix', type='string', nargs=1, action='store',
+@@ -48,7 +48,7 @@
+     for (x, y) in envvar:
+         if x in os.environ:
+             print 'Warning: you\'ve set %s in the environmental variable!' % x
+-            env[y] = os.environ[x]
++            env[y] += os.environ[x]
+ 
+ env = Environment(ENV=os.environ,
+                   CFLAGS=cflags, CXXFLAGS=cflags,
