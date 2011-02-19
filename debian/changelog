@@ -1,0 +1,14 @@
+xsunpinyin (2.0.3-1) unstable; urgency=low
+
+  * New upstream release 2.0.3.
+  * Upload to unstable.
+  * Update VCS field in debian/control.
+  * Remove README.source, it's no meaning now.
+
+ -- Liang Guo <bluestonechina@gmail.com>  Sat, 19 Feb 2011 18:14:46 +0800
+
+xsunpinyin (2.0.2-1) experimental; urgency=low
+
+  * Initial release (Closes: #587840)
+
+ -- Liang Guo <bluestonechina@gmail.com>  Sun, 03 Oct 2010 11:15:10 +0800

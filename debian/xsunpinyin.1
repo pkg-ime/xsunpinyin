@@ -1,0 +1,38 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH XSUNPINYIN 1 "Oct 12, 2010"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+xsunpinyin \-  a XIM server with SunPinyin input method
+.SH SYNOPSIS
+.B xsunpinyin
+.SH DESCRIPTION
+Sunpinyin is a statistical language model (SLM) based input method 
+engine for Simplified Chinese, it features full sentence input.
+.PP
+xsunpinyin is a standalone XIM server with SunPinyin input method.
+.PP
+xsunpinyin depends on im\-switch, to set xsunpinyin as the default input 
+method, please run:
+.PP
+im\-switch  \-s xsunpinyin
+.SH SEE ALSO
+.BR im\-switch (8),
+.SH AUTHOR
+xsunpinyin was written by Mike Qin <mikeandmore@gmail.com>.
+.PP
+This manual page was written by Liang Guo <bluestonechina@gmail.com>,
+for sunpinyin project. 

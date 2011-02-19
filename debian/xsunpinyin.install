@@ -1,0 +1,3 @@
+usr/share/xsunpinyin/*
+usr/bin/*
+etc/X11/xinit/xinput.d/

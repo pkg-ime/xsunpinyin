@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+#
+# Modified for xsunpinyin package by 
+# Liang Guo <bluestonechina@gmail.com> 2010
+
+SCONS=scons 
+
+
+build: build-stamp
+build-stamp: 
+	$(SCONS)
+	touch build-stamp
+
+clean: clean-patched 
+clean-patched:
+	dh_testdir
+	dh_testroot
+	$(SCONS) -c
+	-rm .sconsign.dblite config.log configure.conf
+	dh_clean 
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	$(SCONS) install --prefix=$(DEB_DESTDIR)/usr --install-sandbox=debian/tmp
+	install -c -D -m 644  xsunpinyin debian/tmp/etc/X11/xinit/xinput.d/xsunpinyin
+	dh_install --sourcedir=debian/tmp --fail-missing
+	touch install-stamp
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs 
+	dh_installexamples
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install
+
