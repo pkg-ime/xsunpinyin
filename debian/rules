@@ -28,7 +28,7 @@ install-stamp: build-stamp
 	dh_prep
 	dh_installdirs
 	$(SCONS) install --prefix=$(DEB_DESTDIR)/usr --install-sandbox=debian/tmp
-	install -c -D -m 644  xsunpinyin debian/tmp/etc/X11/xinit/xinput.d/xsunpinyin
+	install -c -D -m 644  im-switch/xsunpinyin debian/tmp/etc/X11/xinit/xinput.d/xsunpinyin
 	dh_install --sourcedir=debian/tmp --fail-missing
 	touch install-stamp
 
