@@ -1,6 +1,4 @@
-When LDFLAGS, CXXFLAGS and others is defined in system environment, the value defined
-in system environment should be appended to env, rather than replace.
-
+force some flags always on in linkflags
 --- a/SConstruct
 +++ b/SConstruct
 @@ -32,7 +32,7 @@
@@ -12,12 +10,35 @@ in system environment should be appended to env, rather than replace.
  
  # options
  AddOption('--prefix', dest='prefix', type='string', nargs=1, action='store',
-@@ -48,7 +48,7 @@
-     for (x, y) in envvar:
-         if x in os.environ:
-             print 'Warning: you\'ve set %s in the environmental variable!' % x
--            env[y] = os.environ[x]
-+            env[y] += os.environ[x]
+@@ -52,7 +52,6 @@
  
  env = Environment(ENV=os.environ,
                    CFLAGS=cflags, CXXFLAGS=cflags,
+-                  LINKFLAGS=['-export-dynamic'],
+                   CPPPATH=['.', 'IMdkit'])
+ opts.Update(env)
+ 
+@@ -62,11 +61,6 @@
+ 
+ opts.Save('configure.conf', env)
+ 
+-
+-# set rpath
+-if GetOption('rpath') is not None:
+-    env.Append(LINKFLAGS='-Wl,-R -Wl,%s' % GetOption('rpath'))
+-
+ envvar = [('CC', 'CC'),
+           ('CXX', 'CXX'),
+           ('CFLAGS', 'CFLAGS'),
+@@ -83,7 +77,11 @@
+ 
+ env.Append(CFLAGS=extra_cflags)
+ env.Append(CXXFLAGS=extra_cflags)
++env.Append(LINKFLAGS=['-export-dynamic'])
+ 
++# set rpath
++if GetOption('rpath') is not None:
++    env.Append(LINKFLAGS=['-Wl,-R', '-Wl,%s' % GetOption('rpath')])
+ 
+ #
+ #==============================configure================================
