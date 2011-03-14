@@ -10,7 +10,7 @@ SCONS=scons
 
 build: build-stamp
 build-stamp: 
-	$(SCONS)
+	$(SCONS) --prefix=$(DEB_DESTDIR)/usr
 	touch build-stamp
 
 clean: clean-patched 
