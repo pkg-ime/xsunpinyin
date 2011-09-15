@@ -7,8 +7,9 @@
 
 SCONS=scons 
 
-
-build: build-stamp
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
 build-stamp: 
 	$(SCONS) --prefix=$(DEB_DESTDIR)/usr
 	touch build-stamp
