@@ -1,3 +1,9 @@
+xsunpinyin (2.0.3-2) unstable; urgency=low
+
+  * Update debian/copyright to fit DEP-5
+
+ -- Liang Guo <bluestonechina@gmail.com>  Thu, 15 Sep 2011 23:45:17 +0800
+
 xsunpinyin (2.0.3-1) unstable; urgency=low
 
   * New upstream release 2.0.3.
