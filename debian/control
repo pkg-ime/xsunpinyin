@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
 Uploaders: Liang Guo <bluestonechina@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~), scons, pkg-config, libsunpinyin-dev, libgtk2.0-dev
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Homepage: http://code.google.com/p/sunpinyin
 Vcs-Git: git://git.debian.org/git/collab-maint/xsunpinyin
 Vcs-Browser: http://git.debian.org/?p=collab-maint/xsunpinyin.git
