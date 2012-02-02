@@ -2,7 +2,7 @@ xsunpinyin (2.0.3-3) unstable; urgency=low
 
   * debian/copyright:
     - Add Upstream-Contact
-    - Update Format, Add version information
+    - Update Format field
   * Use Environment.MergeFlags to separate build flags (Closes: #647046)
   * debian/control:
     - Set DM-Upload-Allowed
