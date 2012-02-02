@@ -3,6 +3,7 @@ xsunpinyin (2.0.3-3) unstable; urgency=low
   * debian/copyright:
     - Add Upstream-Contact
     - Update Format, Add version information
+  * Use Environment.MergeFlags to separate build flags (Closes: #647046)
 
  -- Liang Guo <bluestonechina@gmail.com>  Thu, 02 Feb 2012 16:40:22 +0800
 

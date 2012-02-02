@@ -1,0 +1,16 @@
+Description: Use MergeFlags to correctly handle multi-word variables
+Author: Michael Terry <michael.terry@canonical.com>
+
+Index: xsunpinyin-2.0.3/SConstruct
+===================================================================
+--- xsunpinyin-2.0.3.orig/SConstruct	2011-11-22 11:00:46.889491444 -0500
++++ xsunpinyin-2.0.3/SConstruct	2011-11-22 11:00:59.173491573 -0500
+@@ -48,7 +48,7 @@
+     for (x, y) in envvar:
+         if x in os.environ:
+             print 'Warning: you\'ve set %s in the environmental variable!' % x
+-            env[y] = os.environ[x]
++            env.MergeFlags(os.environ[x])
+ 
+ env = Environment(ENV=os.environ,
+                   CFLAGS=cflags, CXXFLAGS=cflags,

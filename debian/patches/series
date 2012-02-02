@@ -1,1 +1,2 @@
 append-os-environ-toenv.patch
+separate_ldflags.patch
