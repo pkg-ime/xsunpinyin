@@ -3,6 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
 Uploaders: Liang Guo <bluestonechina@gmail.com>
+DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7.0.50~), scons, pkg-config, libsunpinyin-dev, libgtk2.0-dev
 Standards-Version: 3.9.2
 Homepage: http://code.google.com/p/sunpinyin
