@@ -1,3 +1,11 @@
+xsunpinyin (2.0.3-3) unstable; urgency=low
+
+  * debian/copyright:
+    - Add Upstream-Contact
+    - Update Format, Add version information
+
+ -- Liang Guo <bluestonechina@gmail.com>  Thu, 02 Feb 2012 16:40:22 +0800
+
 xsunpinyin (2.0.3-2) unstable; urgency=low
 
   * Update debian/copyright to fit DEP-5
